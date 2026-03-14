@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قاعدة بيانات الصحف والمواقع الإخبارية</title>
+<style>
+  body { font-family: Arial, sans-serif; direction: rtl; background: #f7f7f7; margin: 10px; }
+  h1 { text-align: center; color: #333; font-size: 1.5em; }
+  .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 10px; }
+  input, select { padding: 8px; font-size: 1em; }
+  .table-container { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: #fff; min-width: 600px; }
+  th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+  th { background-color: #0078d7; color: #fff; }
+  tr:hover { background-color: #e6f2ff; }
+  a { color: #0078d7; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    th, td { padding: 8px; font-size: 0.9em; }
+  }
+</style>
+</head>
+<body>
+<h1>قاعدة بيانات الصحف والمواقع الإخبارية</h1>
+
+<div class="controls">
+  <input type="text" id="searchInput" placeholder="اكتب اسم الموقع...">
+  <select id="filterSelect">
+    <option value="all">الكل</option>
+    <option value="نعم">لديها بث مباشر</option>
+    <option value="لا">بدون بث مباشر</option>
+  </select>
+</div>
+
+<div class="table-container">
+<table id="newsTable">
+  <thead>
+    <tr>
+      <th>الصحيفة / الموقع</th>
+      <th>رابط الموقع</th>
+      <th>بث مباشر</th>
+      <th>رابط البث المباشر</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>بي بي سي</td><td><a href="https://www.bbc.com/arabic" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://www.bbc.com/arabic/media-49522519" target="_blank">رابط البث</a></td></tr>
+    <tr><td>العربية</td><td><a href="https://www.alarabiya.net/" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://www.alarabiya.net/live-stream" target="_blank">رابط البث</a></td></tr>
+    <tr><td>الميادين</td><td><a href="https://www.almayadeen.net/" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://www.almayadeen.net/live" target="_blank">رابط البث</a></td></tr>
+    <tr><td>سكاي</td><td><a href="https://www.skynewsarabia.com/" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://www.skynewsarabia.com/" target="_blank">رابط البث</a></td></tr>
+    <tr><td>الجزيرة</td><td><a href="https://www.aljazeera.net/" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://www.aljazeera.net/video/live" target="_blank">رابط البث</a></td></tr>
+    <tr><td>فرانس</td><td><a href="https://www.france24.com/ar/" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://www.france24.com/ar/%D8%A7%D9%84%D8%A8%D8%AB-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1" target="_blank">رابط البث</a></td></tr>
+    <tr><td>آر تي</td><td><a href="https://arabic.rt.com/" target="_blank">الرابط</a></td><td>نعم</td><td><a href="https://arabic.rt.com/live/" target="_blank">رابط البث</a></td></tr>
+    <tr><td>أي بي</td><td><a href="https://apnews.com/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>موسوعة تابعة 964</td><td><a href="https://mewires.com/iraq/aliraqnews" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>شبكة 964</td><td><a href="https://964media.com/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>صحيفة الشرق الأوسط</td><td><a href="https://aawsat.com/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>العربي الجديد</td><td><a href="https://www.alaraby.co.uk/" target="_blank">الرابط</a></td><td>نعم</td><td>-</td></tr>
+    <tr><td>جريدة المدى</td><td><a href="https://almadapaper.net/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>جريدة طريق الشعب</td><td><a href="https://www.tareeqashaab.com/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>الشرق</td><td><a href="https://asharq.com/" target="_blank">الرابط</a></td><td>نعم</td><td>-</td></tr>
+    <tr><td>جمار</td><td><a href="https://jummar.media/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>اريج</td><td><a href="https://arij.net/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>نيريج</td><td><a href="https://nirij.org/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>درج</td><td><a href="https://daraj.media/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+    <tr><td>شبكة الساعة</td><td><a href="https://alssaa.com/" target="_blank">الرابط</a></td><td>لا</td><td>-</td></tr>
+  </tbody>
+</table>
+</div>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const filterSelect = document.getElementById("filterSelect");
+const tbody = document.getElementById("newsTable").tBodies[0];
+
+function filterTable() {
+  const search = searchInput.value.toLowerCase();
+  const filter = filterSelect.value;
+  for (let row of tbody.rows) {
+    const name = row.cells[0].textContent.toLowerCase();
+    const live = row.cells[2].textContent;
+    const matchesSearch = name.includes(search);
+    const matchesFilter = (filter === "all") || (live === filter);
+    row.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+  }
+}
+
+searchInput.addEventListener("input", filterTable);
+filterSelect.addEventListener("change", filterTable);
+</script>
+</body>
+</html>
